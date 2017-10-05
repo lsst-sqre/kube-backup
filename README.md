@@ -4,11 +4,11 @@ Utility container to backup databases and files from containers in a Kubernetes 
 it can use `kubectl exec` to backup database and files from within containers and store the 
 backup files in an AWS S3 bucket.
 
-`kube-backup` is currently used to automate the database backups of the [squash-db](https://github.com/lsst-sqre/squash-db) service.
+In LSST SQuaRE `kube-backup` is currently used to automate the database backups of the [squash-db](https://github.com/lsst-sqre/squash-db) service.
 
 Docker images are available on [Docker Hub](https://hub.docker.com/r/lsstsqre/kube-backup/).
 
-To build a new image use:
+To build a new image and push to `lsstsqre` docker hub repository use:
 
 ```bash
 TAG=latest make build push
