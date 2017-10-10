@@ -412,8 +412,7 @@ backup_mysql_exec ()
   #
   # Create and execute 'kubectl exec' backup command
   #
-
-  local backup_cmd="MYSQL_PWD=\"\${MYSQL_PASSWORD}\" mysqldump '${DATABASE}' --user=\"\${MYSQL_USER}\" --single-transaction | gzip"
+  local backup_cmd="MYSQL_PWD=\"\${MYSQL_ROOT_PASSWORD}\" mysqldump '${DATABASE}' --user=root --single-transaction | gzip"
   echo "Backing up MySQL database '${DATABASE}' from container '${CONTAINER}' in pod '${POD}' to '${target}'"
   if [[ "${DRY_RUN}" != "true" ]]; then
     if [[ "$use_s3" == "true" ]]; then
